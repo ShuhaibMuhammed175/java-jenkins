@@ -1,13 +1,13 @@
 pipeline {
     agent {
         docker {
-            image 'abhishekf5/maven-abhishek-docker-agent:v1'
+            image 'shuhaibmuhammad/maven-docker-agent:latest'
             args '--user root -v /var/run/docker.sock:/var/run/docker.sock'
         }
     }
 
     environment {
-        DOCKER_IMAGE = "shuhaib/ultimate-cicd:${BUILD_NUMBER}"
+        DOCKER_IMAGE = "shuhaibmuhammad/ultimate-cicd:${BUILD_NUMBER}"
         GIT_REPO_NAME = "java-jenkins"
         GIT_USER_NAME = "ShuhaibMuhammed175"   // Your GitHub username
     }
